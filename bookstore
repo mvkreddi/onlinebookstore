@@ -17,6 +17,6 @@ node {
     }  
     
     stage('Deploy'){
-        sh 'cp /root/.jenkins/workspace/Jenkinsfile/*.war /root/Desktop/apache-tomcat-8.0.52/webapps/'
+        sh 'cp /root/.jenkins/workspace/Jenkinsfile/*.war /root/apache-tomcat-8.0.52/webapps/'
     }    
 }   
