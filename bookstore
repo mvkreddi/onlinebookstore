@@ -1,0 +1,22 @@
+node {
+
+    stage ('git'){
+        git branch: 'J2EE', url: 'https://github.com/mvkreddi/onlinebookstore.git'
+    }
+     
+    stage ('compile'){
+        sh 'mvn compile'
+    }
+   
+    stage ('test'){
+        sh 'mvn test'
+    }
+    
+    stage ('package'){
+        sh 'mvn package'
+    }  
+    
+    stage('Deploy'){
+        sh 'cp /root/.jenkins/workspace/Jenkinsfile/*.war /root/Desktop/apache-tomcat-8.0.52/webapps/'
+    }    
+}   
